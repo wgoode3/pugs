@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Pugs
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    body
+        .container
+            .jumbotron
+                h1 Lorem ipsum dolor sit amet.
+            
+            table.table.table-striped
+                tr
+                    th Name
+                    th Email
+                each user in users
+                    if user.name != "Brendan"
+                        tr
+                            td= user.name
+                            td= user.email
+
+            form(action="/process" method="post")
+                .row
+                    .form-group.col-sm-6
+                        label Name:
+                        input(class="form-control" type="text" name="name" placeholder="your name...")
+                    .form-group.col-sm-6
+                        label Email:
+                        input(class="form-control" type="text" name="email" placeholder="your email...")
+                button(type="submit" class="btn btn-primary") Submit
